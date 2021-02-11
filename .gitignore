@@ -1,2 +1,4 @@
 .idea/
 *.pyc
+htmlcov/
+frontend/frontend/node_modules/
