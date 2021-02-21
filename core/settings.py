@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'drf_blog',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'PASSWORD': 'gulki1',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -131,11 +131,18 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny' #kazdy moze uzywac api
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly' #kazdy moze uzywac api
     ]
 }
+#Permissions: SYSTEM WIDE
+# AllowAny - wszyscy moga dostac sie do REST API
+# IsAuthenticated - ktokolwiek kto ma konto u nas i jest zalogowany
+# IsAdminUser - tylko ktoś oznaczony jako superuser (admin)
+# IsAuthenticatedOrReadOnly - każdy może zobaczyć dane ale tylko readOnly a delete i update moze tylko zalogowany
+# www.django-rest-framework.org/api-guide/permissions/
 
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000', #na tym porcie React dziala,
     'http://localhost:3000'
 ]
+
