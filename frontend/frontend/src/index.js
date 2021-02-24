@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import App from "./App";
 import Header from './components/Header'
 import Footer from './components/Footer'
+import SignUp from './components/register'
 import ConnectionExample from './components/ConnectionExample'
 
 
@@ -15,6 +16,7 @@ const routing = (
           <Header/>
           <Switch>
               <Route exact path="/" component={App}/> {/* Main app entry*/}
+              <Route path="/register" component={SignUp} />
           </Switch>
           <ConnectionExample/>
           <Footer/>
