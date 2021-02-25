@@ -7,6 +7,8 @@ import App from "./App";
 import Header from './components/Header'
 import Footer from './components/Footer'
 import SignUp from './components/register'
+import SignIn from './components/login'
+import SignOut from './components/logout'
 import ConnectionExample from './components/ConnectionExample'
 
 
@@ -17,6 +19,8 @@ const routing = (
           <Switch>
               <Route exact path="/" component={App}/> {/* Main app entry*/}
               <Route path="/register" component={SignUp} />
+              <Route path="/login" component={SignIn} />
+              <Route path="/logout" component={SignOut} />
           </Switch>
           <ConnectionExample/>
           <Footer/>
