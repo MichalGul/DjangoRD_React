@@ -19,13 +19,24 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from rest_framework.schemas import get_schema_view
+from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # endpointy z pakietu rest_framework_simplejwt
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('admin/', admin.site.urls),
     path('', include('blog.urls', namespace='blog')),
     path('api/', include('blog_api.urls', namespace='blog_api')),
     path('api/user/', include('users.urls', namespace='users')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')), # Add rest framework basic login page
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'), #endpointy z pakietu rest_framework_simplejwt
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    # data schema API
+    path('schema', get_schema_view(
+        title="PRoject BlogAPI",
+        description="API React django blog project ...",
+        version="1.0.0"
+    ), name='openapi-schema'),
+    #documentation
+    path('docs/', include_docs_urls(title="BlogAPI")),
 ]

@@ -12,7 +12,7 @@ export default function SignOut() {
 		console.log("AAAAAAAAAAAAAAAA")
 		localStorage.removeItem('access_token');
 		localStorage.removeItem('refresh_token');
-		axiosInstance.defaults.headers[' '] = null;
+		axiosInstance.defaults.headers['Authorization'] = null;
 		history.push('/login');
 	});
 	return <div>Logout</div>;

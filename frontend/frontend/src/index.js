@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import SignUp from './components/register'
 import SignIn from './components/login'
 import SignOut from './components/logout'
+import Single from './components/single'
 import ConnectionExample from './components/ConnectionExample'
 
 
@@ -21,6 +22,7 @@ const routing = (
               <Route path="/register" component={SignUp} />
               <Route path="/login" component={SignIn} />
               <Route path="/logout" component={SignOut} />
+              <Route path="/post/:slug" component={Single} />
           </Switch>
           <ConnectionExample/>
           <Footer/>
