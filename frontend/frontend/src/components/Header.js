@@ -79,6 +79,18 @@ function Header() {
                             Logout
                         </Button>
                         </Grid>
+                        <Grid item xs={1}>
+                            <Button
+                                href="#"
+                                color="primary"
+                                variant="outlined"
+                                className={classes.link}
+                                component={NavLink}
+                                to="/material-ui"
+                            >
+                            Material UI tr
+                        </Button>
+                        </Grid>
                     </Grid>
                 </Toolbar>
             </AppBar>
